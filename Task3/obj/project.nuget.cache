@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "pPhb06KXIEnP15IofmdWX2r57jPUwFkRKn5kYa0an7U/KXjU9nSEa12hvaD/hlzvzCxHawXlwpfdaaIfVTldBQ==",
+  "success": true,
+  "projectFilePath": "/home/pilid1337/ЯПы/lab1/Task3/Task3.fsproj",
+  "expectedPackageFiles": [
+    "/home/pilid1337/.nuget/packages/fsharp.core/8.0.102/fsharp.core.8.0.102.nupkg.sha512",
+    "/home/pilid1337/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
+  ],
+  "logs": []
+}
