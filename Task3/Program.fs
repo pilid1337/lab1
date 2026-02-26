@@ -20,9 +20,12 @@ let divComp (aReal:float, aImag:float) (bReal:float, bImag:float) : (float*float
 
 let rec powComp (aReal:float, aImag:float) power:int :float*float =
     match power with
-    | 0 -> 1., 1.
+    | 0 -> 1., 0.
     | 1 -> aReal, aImag
     | _ -> mulComp (aReal,aImag) (powComp (aReal,aImag) (power - 1))
+
+let printComp (aReal:float, aImag:float) = 
+    printfn "Результат: %f + %fi" aReal aImag
 
 [<EntryPoint>]
 let main args =   
@@ -47,7 +50,7 @@ let main args =
                 printfn "Неверно введена степень"
                 1
             else
-                printf "Результат: %A" (powComp (aReal, aImag) power)
+                printComp (powComp (aReal, aImag) power)
                 0
         else
             printf "Введите вещественную часть второго числа: "
@@ -57,10 +60,23 @@ let main args =
             let bImag  = float (Console.ReadLine())
 
             match operation with
-            | 1 -> printf "Сумма: %A" (sumComp (aReal, aImag) (bReal, bImag))
-            | 2 -> printf "Разность: %A" (subComp (aReal, aImag) (bReal, bImag))
-            | 3 -> printf "Произведение: %A" (mulComp (aReal, aImag) (bReal, bImag))
-            | 4 -> printf "Частное: %A" (divComp (aReal, aImag) (bReal, bImag))
-            | _ -> printfn "Непредвиденная ситуация"
-
-            0
+            | 1 -> 
+                printComp (sumComp (aReal, aImag) (bReal, bImag)) 
+                0
+            | 2 -> 
+                printComp (subComp (aReal, aImag) (bReal, bImag))
+                0
+            | 3 -> 
+                printComp (mulComp (aReal, aImag) (bReal, bImag))
+                0
+            | 4 -> 
+                let div = divComp (aReal, aImag) (bReal, bImag)
+                if div.IsNone then
+                    printfn "Деление на 0"
+                    1
+                else
+                    printComp div.Value
+                    0
+            | _ -> 
+                printfn "Непредвиденная ситуация"
+                1

@@ -27,3 +27,4 @@
 /home/pilid1337/ЯПы/lab1/Task3/obj/Debug/net8.0/Task3.pdb
 /home/pilid1337/ЯПы/lab1/Task3/obj/Debug/net8.0/Task3.genruntimeconfig.cache
 /home/pilid1337/ЯПы/lab1/Task3/obj/Debug/net8.0/ref/Task3.dll
+/home/pilid1337/ЯПы/lab1/Task3/obj/Debug/net8.0/Task3.sourcelink.json
